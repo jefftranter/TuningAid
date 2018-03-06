@@ -105,8 +105,8 @@ U2 forms an stable oscillator which adjustable frequency and duty
 cycle. It drives MOSFET switches Q1 and Q2.
 [TODO: Show typical output waveform from an oscilloscope.]
 
-[TODO: Measure current consumption and estimate battery life (with and
-without without power LED.]
+Current drain is about 15 mA (with no power LED and no load). A 9 volt
+battery should last for a few years of occasional use.
 
 ASSEMBLY TIPS
 
