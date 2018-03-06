@@ -30,24 +30,31 @@ FEATURES
 
 OPERATION
 
-P1 is connected to the microphone input of a SSB transmitter.
-P2 is connected to the key input of a CW transmitter.
-A power switch turns the unit on, illuminating the power LED (if installed).
-Pressing the TONE switch will send a low duty cycle audio tone out the SSB output.
-Adjust the LEVEL potentiometer for the desired output level.
+P1 is connected to the microphone input of a SSB transmitter. P2 is
+connected to the key input of a CW transmitter.
+
+The power switch turns the unit on, illuminating the power LED (if
+installed).
+
+Pressing the TONE switch will send a low duty cycle audio tone out the
+SSB output. Adjust the LEVEL potentiometer for the desired output
+level.
 
 Pressing the CW switch will key the transmitter at a low duty cycle (a
 series of dots). Adjust the SPEED and RATIO potentiometers to adjust
 the speed and duty cycle. The KEY switch, if used, will key the
 transmitter on continuously when pressed.
 
+Reference [4] has more details on operation, most of which apply to
+this design.
+
 PARTS LIST
 
 Designator Description
 ---------- -----------
-C1         Capacitor, 1 uF, 15V
+C1         Capacitor, 1 uF, 15V or higher, tantalum or electrolytic
 C2         Capacitor, 0.01 uF ceramic
-C3         Capacitor, 100 uF, 15V
+C3         Capacitor, 100 uF, 15V or higher, tantalum or electrolytic
 C4         Capacitor, 0.1 uF ceramic
 C5         Capacitor, 0.1 uF ceramic
 C6         Capacitor, 0.1 uF ceramic
@@ -61,7 +68,7 @@ P2         Output jack, as desired (e.g. phono jack)
 Q1         2N7000 MOSFET, TO-92 case
 Q2         2N7000 MOSFET, TO-92 case
 R1         Resistor, 390 ohms, 1/8 Watt
-R2         Resistor, 10K ohms, 1/8 Watt
+R2         Potentiometer, 10K ohms
 R3         Resistor, 390 ohms, 1/8 Watt
 R4         Resistor, 22 ohms, 1/8 Watt
 R5         Potentiometer, 500K ohms
@@ -134,12 +141,15 @@ Use whatever jacks you want for P1 and P2. Phono jacks are convenient
 and inexpensive. Be sure to insulate P2 from ground (mounting it on a
 metal case could ground it). Don't ground the SSB output and the KEY
 output by using them at the same time which a transmitter where both
-connections have a ground connection.
+connections have a ground connection. If you only need to switch
+postive CW keying voltages, you can omit Q2 and solder a jumper
+between ts source and rain pads. In this case the ground of connector
+P2 will be at chassis ground, the same as P1.
 
 You can adjust the component values in the SSB circuit if you want
 different pulse frequency or duty cycle.
 
-You can breadboard the circuit, construct it using Manhattan or Ugle
+You can breadboard the circuit, construct it using Manhattan or Ugly
 style, or have a PCB commercially made.
 
 KNOWN ISSUES
