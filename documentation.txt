@@ -1,0 +1,160 @@
+                         Ham Radio Tuning Aid
+                         ====================
+                   Jeff Tranter <tranter@pobox.com>
+
+OVERVIEW
+
+This is a tuning aid, designed to assist in tuning up CW and SSB
+amateur radio transmitters and limiting the risk of damage by
+transmitting at a low duty cycle. It is similar to the "Woodpecker"
+Tuning Aid described in reference [2]. This design is unique in that
+it includes both SSB and CW tuning aid circuits in a single unit.
+
+The design is flexible and can be assembled in different ways
+depending on what features are needed.
+
+It is Open Source Hardware licensed under the The TAPR Open Hardware
+License. You are welcome to build the circuit, and if desired use my
+PCB layout.
+
+FEATURES
+
+1. Outputs for SSB and CW transmitters.
+2. Contained on one small PCB.
+3. Intended to be battery powered by a 9 volt battery.
+4. Uses all through-hole components.
+5. Adjustable SSB output level.
+6. Adjustable CW frequency and duty cycle.
+7. Can key CW transmitters with positive or negative keying up to 60 V
+   200 mA.
+
+OPERATION
+
+P1 is connected to the microphone input of a SSB transmitter.
+P2 is connected to the key input of a CW transmitter.
+A power switch turns the unit on, illuminating the power LED (if installed).
+Pressing the TONE switch will send a low duty cycle audio tone out the SSB output.
+Adjust the LEVEL potentiometer for the desired output level.
+
+Pressing the CW switch will key the transmitter at a low duty cycle (a
+series of dots). Adjust the SPEED and RATIO potentiometers to adjust
+the speed and duty cycle. The KEY switch, if used, will key the
+transmitter on continuously when pressed.
+
+PARTS LIST
+
+Designator Description
+---------- -----------
+C1         Capacitor, 1 uF, 15V
+C2         Capacitor, 0.01 uF ceramic
+C3         Capacitor, 100 uF, 15V
+C4         Capacitor, 0.1 uF ceramic
+C5         Capacitor, 0.1 uF ceramic
+C6         Capacitor, 0.1 uF ceramic
+D1         Diode, 1N4148
+D2         Diode, 1N4148
+D3         Diode, 1N4148
+D4         Diode, 1N4148
+LED1       LED
+P1         Output jack, as desired (e.g. phono jack)
+P2         Output jack, as desired (e.g. phono jack)
+Q1         2N7000 MOSFET, TO-92 case
+Q2         2N7000 MOSFET, TO-92 case
+R1         Resistor, 390 ohms, 1/8 Watt
+R2         Resistor, 10K ohms, 1/8 Watt
+R3         Resistor, 390 ohms, 1/8 Watt
+R4         Resistor, 22 ohms, 1/8 Watt
+R5         Potentiometer, 500K ohms
+R6         Resistor, 1K ohms, 1/8 Watt
+R7         Resistor, 47K ohms, 1/8 Watt
+R8         Resistor, 10K ohms, 1/8 Watt
+R9         Potentiometer, 500K ohms
+R10        Resistor, 1K ohms, 1/8 Watt
+R11        Resistor, 330 ohms, 1/8 Watt
+SW1        Toggle switch
+SW2        Momentary pushbutton
+SW3        Momentary pushbutton
+SW4        Momentary pushbutton
+U1         IC, 74LS13 Dual Schmitt Trigger
+U2         IC, 555 Timer
+U3         IC, 78L05 5V regulator
+V1         9 Volt battery and battery clip
+
+The only part that can be hard to find is the 74LS13. You can
+substitute it with other logic families, ie.g. 7413, 74F13, 74HCT13,
+etc.
+
+CIRCUIT DETAILS
+
+For the latest design, refer to the EasyEDA project (schematic and
+PCB) in reference [1].
+
+The SSH circuit is similar to the "Woodpecker" Tuning Aid in reference
+[2]. The CW circuit is very similar to the commercially sold Ameritron
+ATP-102 (see references [3] and [4]).
+
+Voltage regulator U1 converts a 9 volt battery to the 5 volts needed
+by U1. U2 doesn't strictly require 5 volts but is run from the same
+supply.
+
+U1 forms an oscillator which a short duty cycle. The output level
+is adjusted by R2, and reaches close to 5 volts peak to peak.
+[TODO: Show typical output waveform from an oscilloscope.]
+
+U2 forms an stable oscillator which adjustable frequency and duty
+cycle. It drives MOSFET switches Q1 and Q2.
+[TODO: Show typical output waveform from an oscilloscope.]
+
+[TODO: Measure current consumption and estimate battery life (with and
+without without power LED.]
+
+ASSEMBLY TIPS
+
+See reference [1] for the full schematic, parts list, and PCB layout.
+
+You probably want to mount the unit in a case. There are mounting
+holes on each corner of the PCB. The switches, output jacks, and power
+LED can be mounted on the case.
+
+The LED is optional. You can omit it and resistor R11 to extend the
+battery life. The value of R11 an be adjusted for the desired
+brightness for the particular type of LED being used.
+
+SW 2 is optional and can be omitted if you don't need the option to
+key the CW transmitter fully on.
+
+You can choose to omit SW3 and SW4 and jumper them, and make SW1 a
+momentary pushbutton that turns on both circuits when pressed.
+
+The three pots can full sized units mounted on the outside of a case
+or trimpots mounted on the PCB that are adjusted once as desired and
+left internal to the case.
+
+Use whatever jacks you want for P1 and P2. Phono jacks are convenient
+and inexpensive. Be sure to insulate P2 from ground (mounting it on a
+metal case could ground it). Don't ground the SSB output and the KEY
+output by using them at the same time which a transmitter where both
+connections have a ground connection.
+
+You can adjust the component values in the SSB circuit if you want
+different pulse frequency or duty cycle.
+
+You can breadboard the circuit, construct it using Manhattan or Ugle
+style, or have a PCB commercially made.
+
+KNOWN ISSUES
+
+The unit has not yet been tested by me with many models of
+transmitter.
+
+FUTURE WORK
+
+I have not yet received PCBs and so have not been able to verify that
+the PCB layout is correct.
+
+REFERENCES
+
+1. https://easyeda.com/tranter/Transmitter_Tuning_Aid-21ecd143b1a042daaa170a622e246e2c
+2. http://www.qsl.net/ei7ba/Woodpecker.htm
+3. http://www.ameritron.com/Product.php?productid=ATP-102
+4. http://www.ameritron.com/Downloads/index.php?productid=ATP-102&filename=ATP-102%20Manual.pdf&company=ameritron
