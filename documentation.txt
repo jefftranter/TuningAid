@@ -106,11 +106,9 @@ supply.
 
 U1 forms an oscillator which a short duty cycle. The output level
 is adjusted by R2, and reaches close to 5 volts peak to peak.
-[TODO: Show typical output waveform from an oscilloscope.]
 
-U2 forms an stable oscillator which adjustable frequency and duty
+U2 forms an stable oscillator with adjustable frequency and duty
 cycle. It drives MOSFET switches Q1 and Q2.
-[TODO: Show typical output waveform from an oscilloscope.]
 
 Current drain is about 15 mA (with no power LED and no load). A 9 volt
 battery should last for a few years of occasional use.
