@@ -110,8 +110,9 @@ is adjusted by R2, and reaches close to 5 volts peak to peak.
 U2 forms an stable oscillator with adjustable frequency and duty
 cycle. It drives MOSFET switches Q1 and Q2.
 
-Current drain is about 15 mA (with no power LED and no load). A 9 volt
-battery should last for a few years of occasional use.
+Current drain is about 15 mA (with no power LED and no load), 20 mA
+with an LED. A 9 volt battery should last for a few years of
+occasional use.
 
 ASSEMBLY TIPS
 
@@ -120,6 +121,28 @@ See reference [1] for the full schematic, parts list, and PCB layout.
 You probably want to mount the unit in a case. There are mounting
 holes on each corner of the PCB. The switches, output jacks, and power
 LED can be mounted on the case.
+
+Another option is to mount a piece of plexiglass the same size as the
+PCB, on standoffs. Drill holes for the switches, jacks, and pots or
+cutouts for the trimmer pots. The PCB size is 3.00 x 1.84 inches or
+7.62 x 4.67 cm. See below:
+
+       SW1     SW3   SW2    SW4      P1    P2
++-------------------------------------------------+
+| O    ( )    ( )    ( )    ( )      ( )   ( )  O |
+|                                                 |
+|                                                 |
+|                                                 |
+|                                                 |
+|                                                 |
+|                                                 |
+|                                                 |
+|                                                 |
+|    +-----+ +-----+ +-----+                      |
+|    |     | |     | |     |                      |
+| O  |     | |     | |     |                    O |
++----+     +-+     +-+     +----------------------+
+      R5   R9   R2
 
 The LED is optional. You can omit it and resistor R11 to extend the
 battery life. The value of R11 an be adjusted for the desired
