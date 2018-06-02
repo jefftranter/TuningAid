@@ -175,13 +175,12 @@ style, or have a PCB commercially made.
 
 KNOWN ISSUES
 
-The unit has not yet been tested by me with many models of
-transmitter.
+The unit has not been tested with many models of transmitter.
 
 FUTURE WORK
 
-I have not yet received PCBs and so have not been able to verify that
-the PCB layout is correct.
+The rev 1.0 PCB had a small error. This was corrected in rev 1.1, but
+I have not yet had any rev 1.1 PCBs manufactured to verify it.
 
 REFERENCES
 
